@@ -1,0 +1,28 @@
+{
+  "name": "smartcar-takehome",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.16.2",
+    "bootstrap": "^3.3.7",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-json-view": "^1.12.4",
+    "react-scripts": "1.0.13"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "compile-less": "grunt compile-less",
+    "watch-less": "grunt watch"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-less": "^1.4.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "less-plugin-autoprefix": "^1.5.1",
+    "less-plugin-clean-css": "^1.5.1"
+  }
+}
