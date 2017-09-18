@@ -41,9 +41,9 @@ class GeneratedInputFields extends Component {
 }
   render(){
 
-    // let inputs = typeof this.props.requestObj.body === 'string' ? JSON.parse(this.props.requestObj.body) : this.props.requestObj.body;
+    let inputs = typeof this.props.requestObj.body === 'string' ? JSON.parse(this.props.requestObj.body) : this.props.requestObj.body;
     debugger;
-    let inputsToRender = this.props.requestObj.body.map((input, i) => (
+    let inputsToRender = inputs.map((input, i) => (
     <div key={i}>
       <label className='inputLabels'htmlFor={input.name}> {input.name}</label> 
       <input 

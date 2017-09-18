@@ -129,7 +129,9 @@ class UserInput extends Component {
 
 
   render(){
-     let configData = typeof this.state.request === 'string' ? JSON.parse(this.state.request) : this.state.request;
+    debugger;
+     // let configData = typeof this.state.request === 'string' ? JSON.parse(this.state.request) : this.state.request;
+     let configData = this.state.request;
     return(
       <div className='userInputContainer'>
         <h4 className='requestMeta text-center'> Request meta details </h4>
