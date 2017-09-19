@@ -1,12 +1,12 @@
 import React from 'react';
+import './Response.css'
 
 const Response = (props) => (
-  <div className='col-lg-4'> 
-    <h5 className='text-center'> Server Response</h5> 
-    <small> This is displayed as an array of response objects for each request you send </small> 
+  <div> 
+    <h4 className='serverHeader text-center'> Server Response</h4> 
+    <small className='text-center'> This is displayed as an array of response objects for each request you send </small> 
     <pre> {JSON.stringify(props.responseToDisplay, null, "\t") } </pre>
   </div>
 )
-
 
 export default Response;

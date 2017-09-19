@@ -3,9 +3,8 @@
 // }
 */
 
-.rat{
-  height: 1000px;
-  // text-align: 'center';
+.userInputContainer{
+  min-height: 100%
 }
 
 .requestMeta{

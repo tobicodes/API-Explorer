@@ -1,0 +1,10 @@
+.headers label{
+  margin-right: 10px;
+  margin-left: 10px;
+  font-weight: 400
+}
+
+.headersInput input{
+  margin-bottom: 15px
+
+}

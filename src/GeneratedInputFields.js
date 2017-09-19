@@ -15,6 +15,7 @@ class GeneratedInputFields extends Component {
   }
 
   handleChange(e){
+
     let newFormInputs = this.state.formInputs.slice();
     newFormInputs[e.target.id].value = e.target.value;
     this.setState({formInputs: newFormInputs})
@@ -31,38 +32,34 @@ class GeneratedInputFields extends Component {
       })
       
     }
-
     this.props.makeRequest(this.props.requestObj, dataObjects)
-    // for(var obj in dataObjects){
-    //   debugger;
-    //   this.props.makeRequest(this.props.requestObj, dataObjects[obj])
-    // }
 
-}
+  }
+
   render(){
-
-    let inputs = typeof this.props.requestObj.body === 'string' ? JSON.parse(this.props.requestObj.body) : this.props.requestObj.body;
-    debugger;
-    let inputsToRender = inputs.map((input, i) => (
-    <div key={i}>
-      <label className='inputLabels'htmlFor={input.name}> {input.name}</label> 
-      <input 
-        name={input.name}
-        type={input.type}
-        value= {this.state.formInputs[i].value}
-        className="form-control inputFields"
-        placeholder = {input.placeholder || `Enter a valid ${input.type} here`}
-        max = {input.max}
-        min = {input.min}
-        required = {input.required}
-        onChange = {this.handleChange}
-        id={i}
-      />
-    </div> 
-  ))
+    let inputsToRender = this.props.requestObj.body.length > 0 ?
+      this.props.requestObj.body.map((input, i) => (
+        <div key={i}>
+          <label className='inputLabels'htmlFor={input.name}> {input.name}</label> 
+          <input 
+            name={input.name}
+            type={input.type}
+            value= {this.state.formInputs[i].value}
+            className="form-control inputFields"
+            placeholder = {input.placeholder || `Enter a valid ${input.type} here`}
+            max = {input.max}
+            min = {input.min}
+            required = {input.required}
+            pattern ={input.pattern}
+            onChange = {this.handleChange}
+            id={i}
+          />
+        </div> 
+      ))
+      : null
 
     return(
-      <div className ='col-lg-3'> 
+      <div> 
         <form className='form-group' onSubmit={this.handleSubmit}>
           <h5> Enter your data for your request</h5> 
           {inputsToRender}
@@ -75,36 +72,3 @@ class GeneratedInputFields extends Component {
 
 
 export default GeneratedInputFields;
-
-// componentWillReceiveProps(nextProps){
-//     console.log("thot", nextProps)
-
-//     console.log("egg", this.props)
-
-//     this.setState({'formInputs': nextProps.requestObj.body})
-//     debugger;
-//   }
-
-//   componentDidMount(){
-//   let inputs = null;
-//     inputs = this.props.requestObj.body.map((input, i) => (
-//     <div key={i}>
-//       <label className='inputLabels'htmlFor={input.name}> {input.name}</label> 
-//       <input 
-//         name={input.name}
-//         type={input.type}
-//         value= {this.state.formInputs[i].value}
-//         className="form-control inputFields"
-//         placeholder = {input.placeholder || `Enter a valid ${input.type} here`}
-//         max = {input.max}
-//         min = {input.min}
-//         required = {input.required}
-//         onChange = {this.handleChange}
-//         id={i}
-//       />
-//     </div> 
-//   ))
-
-//    this.setState({inputsToRender: inputs});
-// }
-
