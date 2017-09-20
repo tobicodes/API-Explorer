@@ -22,8 +22,9 @@ $ npm install
 $ npm start
 ```
 
-![Screenshot of web app](/API-Explorer-whole.png?raw=true "Optional Title")
+If everything worked out fine, you should see the following in your browser
 
+![Screenshot of web app home page](/API-Explorer-whole.png?raw=true "Optional Title")
 
 
 
@@ -46,24 +47,54 @@ $ npm start
 
 ### GET Requests
 
-Since you don't need a request body for a GET request, simply remove the example input data from the config box. Don't delete the emptry string though.
+Since you don't need a request body for a GET request, simply remove the example input data from the config box. Just hit CMD +A and Delete (on a Mac) to remove the example array. 
 
+Your config box should look like this after you remove the example input data.
+
+![Screenshot of web app home page](/API-Explorer-no-body-required.png?raw=true "Optional Title")
 
 
 Choose your URL, then add any headers and then hit the 'Send request' button.
 
 The server response will be displayd. 
 
-- just delete the example input from the screen
-- leave the empty string though.
-- choose your url and then hit send request
-
 ### POST requests
 
-### Patch requests
+Given the rendered input elements, simply enter your info and hit submit request.
+
+The URL would probably look like this:  
+
+```http://${BASE_URL}/resource/:resource_id ```
+
+Hit the submit button and your server response will be displayed in the **server response section.**
+
 
 
 ### Delete requests
+
+Simply put the correct URL - for a DELETE request, this typically looks something like: 
+
+```http://${BASE_URL}/resource/:resource_id ```
+
+So an example would be URL would be: 
+
+``` http://jsonplaceholder.typicode.com/posts/1```
+
+Hit the submit button and your server response will be displayed in the **server response section.**
+
+### Patch requests
+
+Simply put the correct URL - for a PATCH request, this typically looks something like: 
+
+```http://${BASE_URL}/resource/:resource_id ```
+
+So an example would be URL would be: 
+
+``` http://jsonplaceholder.typicode.com/posts/1```
+
+You can send th
+
+Hit the submit button and your server response will be displayed in the **server response section.**
 
 
 #### Next steps
@@ -79,6 +110,7 @@ Some next steps include:
 - Implement functionality for user to add more than 3 headers per request
 - Ensuring accesibility of forms 
 - Extend functionality to other HTTP Methods
+- Fix bug that crashes app with deleted empty string 
 
 
 Some ideas to consider: 
